@@ -1,0 +1,52 @@
+Arguments: 
+  /home/markatron9000/.nvm/versions/node/v19.4.0/bin/node /home/markatron9000/.yarn/bin/yarn.js install
+
+PATH: 
+  /home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/markatron9000/.amplify/bin:/home/markatron9000/.local/bin:/home/markatron9000/.yarn/bin:/home/markatron9000/.config/yarn/global/node_modules/.bin:/home/markatron9000/.nvm/versions/node/v19.4.0/bin:/home/markatron9000/anaconda3/bin:/home/markatron9000/miniconda3/bin:/home/markatron9000/miniconda3/condabin:/home/markatron9000/.sdkman/candidates/gradle/current/bin:/home/markatron9000/.amplify/bin:/usr/local/gradle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/Program Files (x86)/VMware/VMware Player/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Amazon Corretto/jdk11.0.7_10/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/WiFi/bin:/mnt/c/Program Files/Common Files/Intel/WirelessCommon:/mnt/c/Program Files (x86)/Wolfram Research/WolframScript:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/mnt/c/Program Files/nodejs:/mnt/c/Users/markm/Downloads/chromedriver_win32:/mnt/c/Program Files/Amazon/AWSCLIV2:/mnt/c/Program Files/CMake/bin:/mnt/c/Users/markm/AppData/Roaming/local/bin:/mnt/c/Users/markm/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/markm/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/markm/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/markm/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/markm/.dotnet/tools:/mnt/c/Users/markm/AppData/Roaming/npm:/mnt/c/ffmpeg/bin:/mnt/c/Users/markm/AppData/Local/Pandoc:/mnt/c/Users/markm/AppData/Local/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/usr/bin:/mnt/c/Program Files/PostgreSQL/13/bin:/mnt/c/Program Files/heroku/bin:/snap/bin:mnt/c/Users/markm/AppData/Local/Android/Sdk/emulator:mnt/c/Users/markm/AppData/Local/Android/Sdk/tools:mnt/c/Users/markm/AppData/Local/Android/Sdk/tools/bin:/home/markatron9000/Android/tools:/home/markatron9000/Android/platform-tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npmjs.org
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      "expo": "~46.0.21",
+      "expo-status-bar": "~1.4.0",
+      "react": "18.0.0",
+      "react-native": "0.69.9",
+      "react-native-screens": "2.0.0-alpha.12",
+      "@react-navigation/stack": "^5.2.3",
+      "react-native-reanimated": "~1.4.0",
+      "@react-navigation/native": "^5.1.1",
+      "react-native-gesture-handler": "~1.5.0",
+      "react-native-safe-area-context": "0.6.0",
+      "@react-native-community/masked-view": "0.1.5"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.9"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

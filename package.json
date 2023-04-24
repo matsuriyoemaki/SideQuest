@@ -1,0 +1,35 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start:wsl": "REACT_NATIVE_PACKAGER_HOSTNAME=$(netsh.exe interface ip show address 'Wi-Fi' | grep 'IP Address' | sed -r 's/^.*IP Address:\\W*//') npx expo start",
+    "start:wsl_localcli": "REACT_NATIVE_PACKAGER_HOSTNAME=$(netsh.exe interface ip show address 'Wi-Fi' | grep 'IP Address' | sed -r 's/^.*IP Address:\\W*//') npx expo",
+    "start:wsl_localcli_cacheclear": "REACT_NATIVE_PACKAGER_HOSTNAME=$(netsh.exe interface ip show address 'Wi-Fi' | grep 'IP Address' | sed -r 's/^.*IP Address:\\W*//') npx expo -c",
+    "start:wsl_webbuild": "REACT_NATIVE_PACKAGER_HOSTNAME=$(netsh.exe interface ip show address 'Wi-Fi' | grep 'IP Address' | sed -r 's/^.*IP Address:\\W*//') npx expo export:web",
+    "start:wsl_tunnel": "REACT_NATIVE_PACKAGER_HOSTNAME=$(netsh.exe interface ip show address 'Wi-Fi' | grep 'IP Address' | sed -r 's/^.*IP Address:\\W*//') npx expo start --tunnel",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "predeploy": "expo export:web"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.5",
+    "@react-native-picker/picker": "^2.4.10",
+    "@react-navigation/native": "^5.1.1",
+    "@react-navigation/stack": "^5.2.3",
+    "expo": "^48.0.0",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.3",
+    "react-native-gesture-handler": "~2.9.0",
+    "react-native-reanimated": "~2.14.4",
+    "react-native-root-toast": "^3.4.1",
+    "react-native-safe-area-context": "4.5.0",
+    "react-native-screens": "~3.20.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}

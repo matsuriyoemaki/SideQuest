@@ -44,7 +44,12 @@ const ShowScreen = ({route,navigation})=>{
                     delay: 0,
                 });
                 navigation.goBack();
-                 dispatch({type:"REMOVE",payload:id});
+                var title = BlogPost.title
+                var content = BlogPost.content
+                var reward = item
+                var priority = BlogPost.priority
+                dispatch({type:"COMPLETE_POST", payload:{title,content,priority,reward}});
+                dispatch({type:"REMOVE",payload:id});
                 }}
              />
         </View>

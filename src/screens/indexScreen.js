@@ -11,6 +11,7 @@ return (
     <View style={{flex:1}}>
         <Button title="Create Task" onPress={()=>navigation.navigate("create")} />
         <Button title="Add Reward" onPress={()=>navigation.navigate("addreward")} />
+        <Button title="See Completed Tasks" onPress={()=>navigation.navigate("completedtasks")} />
         <FlatList 
          data={state}
          keyExtractor={post=>post.title}
@@ -18,7 +19,7 @@ return (
             if(!(item.type)){
                 return (
                     <TouchableOpacity
-                    onPress={()=>navigation.navigate("show",{id:item.id})}
+                        onPress={()=>navigation.navigate("show",{id:item.id})}
                     >
                          <View style={{
                              flexDirection:"row",

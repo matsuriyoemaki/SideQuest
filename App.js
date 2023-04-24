@@ -7,6 +7,7 @@ import {BlogProvider} from './src/context/BlogContext'
 import ShowScreen from './src/screens/Showscreen'
 import CreateScreen from './src/screens/CreateScreen'
 import AddPriorityReward from './src/screens/AddPriorityReward'
+import CompletedTasks from './src/screens/CompletedTasks'
 import {Feather} from '@expo/vector-icons'
 import { RootSiblingParent } from 'react-native-root-siblings';
 
@@ -21,6 +22,7 @@ function App() {
           options={{
             title:"SideQuest",
             headerTitleAlign:"center",
+            /*
             headerRight:()=>{
                return <Feather 
                name="plus" 
@@ -28,10 +30,12 @@ function App() {
                style={{marginRight:5}}
                />
             }
+            */
             }} />
           <Stack.Screen name="show" component={ShowScreen} options={{title:"Task Details",headerTitleAlign:"center"}} />
           <Stack.Screen name="create" component={CreateScreen} options={{title:"Create Task",headerTitleAlign:"center"}} />
           <Stack.Screen name="addreward" component={AddPriorityReward} options={{title:"Add Reward",headerTitleAlign:"center"}} />
+          <Stack.Screen name="completedtasks" component={CompletedTasks} options={{title:"Completed Tasks",headerTitleAlign:"center"}} />
         </Stack.Navigator>
       </NavigationContainer>
 

@@ -34,7 +34,7 @@ const ShowScreen = ({route,navigation})=>{
                     item = possibleRewards[Math.floor(Math.random()*possibleRewards.length)];
                 }
                 let toast = Toast.show('Task Complete! Your reward is: ' + item, {
-                    duration: Toast.durations.LONG,
+                    duration: 10000,
                     position: Toast.positions.CENTER,
                     textColor: '#000000',
                     backgroundColor: '#00FF00',

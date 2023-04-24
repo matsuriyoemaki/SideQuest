@@ -14,7 +14,7 @@ const CreateScreen = ({route,navigation})=>{
         <View style={{margin:3}}>
             <Text style={{fontSize:22}}>Enter Title</Text>
             <TextInput style={styles.input} value={title} onChangeText={(text)=>setTitle(text)}/>
-            <Text style={{fontSize:22}}>Enter Context</Text>
+            <Text style={{fontSize:22}}>Enter Description</Text>
             <TextInput style={styles.input} value={content} onChangeText={(text)=>setContent(text)}/>
             <Text style={{fontSize:22}}>Enter Priority Number</Text>
             <Picker

@@ -10,8 +10,8 @@ const IndexScreen = ({navigation})=>{
 return (
     <View style={{flex:1}}>
         <Button title="Create Task" onPress={()=>navigation.navigate("create")} />
-        <Button title="Add Reward to Priority" onPress={()=>navigation.navigate("addreward")} />
-        <Button title="Remove Reward from Priority" onPress={()=>navigation.navigate("removerewards")} />
+        <Button title="Add Reward to Priority Pool" onPress={()=>navigation.navigate("addreward")} />
+        <Button title="See Rewards / Remove Rewards" onPress={()=>navigation.navigate("removerewards")} />
         <Button title="See Completed Tasks" onPress={()=>navigation.navigate("completedtasks")} />
         <FlatList 
          data={state}
@@ -31,7 +31,7 @@ return (
                              padding:10,
                              elevation:4
                          }}>
-                         <Text style={{fontSize:22}}>{item.title}</Text>   
+                         <Text><Text style={{fontSize:22}}>{item.title}</Text>   (click me for details)   </Text>
                          <Feather name="trash" size={24} 
                          onPress={()=>dispatch({type:"REMOVE",payload:item.id})}
                          />

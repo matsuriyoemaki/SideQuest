@@ -8,6 +8,7 @@ import ShowScreen from './src/screens/Showscreen'
 import CreateScreen from './src/screens/CreateScreen'
 import AddPriorityReward from './src/screens/AddPriorityReward'
 import CompletedTasks from './src/screens/CompletedTasks'
+import RemoveRewards from './src/screens/RemoveRewards'
 import {Feather} from '@expo/vector-icons'
 import { RootSiblingParent } from 'react-native-root-siblings';
 
@@ -36,6 +37,7 @@ function App() {
           <Stack.Screen name="create" component={CreateScreen} options={{title:"Create Task",headerTitleAlign:"center"}} />
           <Stack.Screen name="addreward" component={AddPriorityReward} options={{title:"Add Reward",headerTitleAlign:"center"}} />
           <Stack.Screen name="completedtasks" component={CompletedTasks} options={{title:"Completed Tasks",headerTitleAlign:"center"}} />
+          <Stack.Screen name="removerewards" component={RemoveRewards} options={{title:"Remove Rewards",headerTitleAlign:"center"}} />
         </Stack.Navigator>
       </NavigationContainer>
 

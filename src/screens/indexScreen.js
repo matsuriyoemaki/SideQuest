@@ -10,7 +10,8 @@ const IndexScreen = ({navigation})=>{
 return (
     <View style={{flex:1}}>
         <Button title="Create Task" onPress={()=>navigation.navigate("create")} />
-        <Button title="Add Reward" onPress={()=>navigation.navigate("addreward")} />
+        <Button title="Add Reward to Priority" onPress={()=>navigation.navigate("addreward")} />
+        <Button title="Remove Reward from Priority" onPress={()=>navigation.navigate("removerewards")} />
         <Button title="See Completed Tasks" onPress={()=>navigation.navigate("completedtasks")} />
         <FlatList 
          data={state}

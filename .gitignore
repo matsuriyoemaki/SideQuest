@@ -1,2 +1,5 @@
 .yarn-integrity
 yarn.lock
+SideQuest/yarn.lock
+SideQuest/package.json
+.gitignore

@@ -10,6 +10,10 @@ import Rewards from './app/screens/rewards';
 import Completed from './app/screens/completed';
 import CreateTask from './app/screens/createTask';
 import CreateReward from './app/screens/createReward';
+import {BlogProvider} from './app/context'
+import { RootSiblingParent } from 'react-native-root-siblings';
+import ViewTasks from './app/screens/viewTasks';
+import RemoveRewards from './app/screens/removeReward';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,8 +38,17 @@ function App(){
         <Stack.Screen name="To-do" component={Tasks}/>
         <Stack.Screen name="CreateTask" component={CreateTask}/>
         <Stack.Screen name="CreateReward" component={CreateReward}/>
+        <Stack.Screen name="ViewTask" component={ViewTasks}/>
+        <Stack.Screen name="removeReward" component={RemoveRewards}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
-export default App;
+
+export default ()=>{
+  return <RootSiblingParent>
+  <BlogProvider>
+      <App />
+   </BlogProvider>
+   </RootSiblingParent>
+ }

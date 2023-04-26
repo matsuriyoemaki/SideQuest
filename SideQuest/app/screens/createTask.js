@@ -1,44 +1,43 @@
-import React from 'react';
-import { Button, Text, TextInput, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
+import React, {useContext, useState} from 'react';
+import { Picker } from '@react-native-picker/picker';
+import { Button, Text, View, FlatList, TextInput, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
+import {BlogContext}  from '../context'
 
 
-function CreateTask({navigation}) {
-    const [title, setTitle] = React.useState('Title');
-    const [description, setDescription] = React.useState('Description');
-    const [deadline, setDeadline] = React.useState('Deadline');
-    return (
-        <SafeAreaView styles={styles.background}>
-            <Text style={styles.TitleText}>Create Task Here</Text>
-
-            <SafeAreaView styles={styles.inputBox}>
-                <TextInput
-                style={styles.TextInput}
-                onChangeText={(title) => setTitle(title)}
-                value={title}
-                />
-            </SafeAreaView>
-
-            <SafeAreaView styles={styles.inputBox}>
-                <TextInput
-                style={styles.TextInput}
-                onChangeText={(description) => setDescription(description)}
-                value={description}
-                />
-            </SafeAreaView>
-
-            <SafeAreaView styles={styles.inputBox}>
-                <TextInput
-                style={styles.TextInput}
-                onChangeText={(deadline) => setDeadline(deadline)}
-                value={deadline}
-                />
-            </SafeAreaView>
-
-                <Button 
+function CreateTask({route, navigation}) {
+    const[title,setTitle] = useState("")
+    const[content,setContent] = useState("")
+    const {state,dispatch} = useContext(BlogContext)
+    const [priority, setSelectedLanguage] = useState("1");
+    const[deadline, setDeadline] = useState("")
+    return(
+        <View style={styles.background}>
+            <Text style={styles.text}>Enter Title</Text>
+            <TextInput style={styles.input} value={title} onChangeText={(text)=>setTitle(text)}/>
+            <Text style={styles.text}>Enter Description</Text>
+            <TextInput style={styles.input} value={content} onChangeText={(text)=>setContent(text)}/>
+            <Text style={styles.text}>Enter Priority Number</Text>
+            <Picker
+                style={{backgroundColor: "white"}}
+                selectedValue={priority}
+                onValueChange={(itemValue, itemIndex) =>
+                    setSelectedLanguage(itemValue)
+                }>
+                <Picker.Item label="1" value="1" />
+                <Picker.Item label="2" value="2" />
+                <Picker.Item label="3" value="3" />
+                <Picker.Item label="4" value="4" />
+                <Picker.Item label="5" value="5" />
+            </Picker>
+            <Text style={styles.text}>Enter Deadline</Text>
+            <TextInput style={styles.input} value={deadline} onChangeText={(text)=>setDeadline(text)}/>
+            <Button 
                     title="Create Task"
-                    style ={styles.createButton}
-                    onPress={() => navigation.navigate("Tasks")}/>
-        </SafeAreaView>
+                    color="#5cffecff"
+                    onPress={() => 
+                    {dispatch({type:"ADD_POST",payload:{title,content,priority}})
+                    navigation.navigate("Tasks")}}/>
+        </View>
     );
 }
 
@@ -48,21 +47,20 @@ const styles = StyleSheet.create({
     background:{
         flex: 1,
         backgroundColor:"black",
-        alignItems: 'center',
-        justifyContent: 'center'
+        margin: 3
     },
-    TitleText:{
-        fontSize: 50,
-        fontWeight:'bold',
-        color: '#5cffecff',
+
+    text:{
+        fontSize: 22,
+        color: "white"
     },
-    inputBox:{
-        backgroundColor: 'white',
-        borderRadius: 30,
-        width: "70%",
-        height: 45,
-        marginBottom: 20,
-        justifyContent: "center",
+
+    input:{
+        fontSize:20,
+        borderWidth:1,
+        borderColor:"black",
+        backgroundColor:"white",
+        marginVertical:8
     },
     TextInput: {
         height: 50,
@@ -70,11 +68,6 @@ const styles = StyleSheet.create({
         padding: 10,
         marginLeft: 20,
         color: 'black'
-    },
-    createButton: {
-        width: '70%',
-        backgroundColor: '#5cffecff',
-        top: "70%"
     }
     
 })

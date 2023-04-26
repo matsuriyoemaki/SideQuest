@@ -26,6 +26,7 @@ function Login({navigation}) {
             </SafeAreaView>
             <View styles={styles.loginButton}>
                 <Button
+                color="#5cffecff"
                 title="Login"
                 onPress={() => navigation.navigate("Root")}/>
             </View>

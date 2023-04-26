@@ -1,33 +1,39 @@
-import React from 'react';
-import { Button, Text, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import React,{useContext, useState} from 'react'
+import {Picker} from '@react-native-picker/picker';
+import {View,Text,StyleSheet,FlatList,Button,TextInput} from 'react-native'
+import {BlogContext}  from '../context'
 
-function CreateReward({navigation}) {
-    const [title, setTitle] = React.useState('Title');
-    const [description, setDescription] = React.useState('Description');
-    const [deadline, setDeadline] = React.useState('Deadline');
-    const [reward, setReward] = React.useState('Reward');
-    return (
-        <SafeAreaView styles={styles.background}>
-            <Text style={styles.TitleText}>Create Reward Here</Text>
-
-            <TextInput
-            style={styles.TextInput}
-            onChangeText={(title) => setTitle(title)}
-            value={title}
-            />
-
-            <TextInput
-            style={styles.TextInput}
-            onChangeText={(description) => setDescription(description)}
-            value={description}
-            />
-
-            
-            <Button 
-                title="Create Reward"
-                style ={styles.createButton}
-                onPress={() => navigation.navigate("Rewards")}/>
-        </SafeAreaView>
+function CreateReward({route, navigation}) {
+    const[title,setTitle] = useState("")
+    const[description,setContent] = useState("")
+    const {state,dispatch} = useContext(BlogContext)
+    const [priority, setSelectedLanguage] = useState("1");
+    return(
+        <View style={{margin:3}}>
+            <Text style={styles.text}>Enter Title</Text>
+            <TextInput style={styles.input} value={title} onChangeText={(text)=>setTitle(text)}/>
+            <Text style={styles.text}>Enter Description</Text>
+            <TextInput style={styles.input} value={description} onChangeText={(text)=>setContent(text)}/>
+            <Text style={{fontSize:22}}>Add Reward for Priority Number: </Text>
+            <Picker
+                selectedValue={priority}
+                onValueChange={(itemValue, itemIndex) =>
+                    setSelectedLanguage(itemValue)
+                }>
+                <Picker.Item label="1" value="1" />
+                <Picker.Item label="2" value="2" />
+                <Picker.Item label="3" value="3" />
+                <Picker.Item label="4" value="4" />
+                <Picker.Item label="5" value="5" />
+            </Picker>
+            <Button
+             title="Add reward to priority pool"
+             onPress={()=>{
+                dispatch({type:"ADD_REWARD",payload:{title,priority}})
+                navigation.navigate("Rewards")
+                }}
+             />
+        </View>
     );
 }
 

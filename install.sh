@@ -4,6 +4,5 @@
 brew install node
 echo "Node Version: $(node -v)"
 echo "NPM Version: $(npm -v)"
-cd SideQuest
 npm install yarn
 yarn install

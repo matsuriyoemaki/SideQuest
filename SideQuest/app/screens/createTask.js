@@ -23,11 +23,9 @@ function CreateTask({route, navigation}) {
                 onValueChange={(itemValue, itemIndex) =>
                     setSelectedLanguage(itemValue)
                 }>
-                <Picker.Item label="1" value="1" />
-                <Picker.Item label="2" value="2" />
-                <Picker.Item label="3" value="3" />
-                <Picker.Item label="4" value="4" />
-                <Picker.Item label="5" value="5" />
+                <Picker.Item label="Low" value="Low" />
+                <Picker.Item label="Medium" value="Medium" />
+                <Picker.Item label="High" value="High" />
             </Picker>
             <Text style={styles.text}>Enter Deadline</Text>
             <TextInput style={styles.input} value={deadline} onChangeText={(text)=>setDeadline(text)}/>
@@ -61,13 +59,6 @@ const styles = StyleSheet.create({
         borderColor:"black",
         backgroundColor:"white",
         marginVertical:8
-    },
-    TextInput: {
-        height: 50,
-        flex: 1,
-        padding: 10,
-        marginLeft: 20,
-        color: 'black'
     }
     
 })

@@ -12,7 +12,7 @@ function Login({navigation}) {
             <SafeAreaView style={styles.inputBox}>
                 <TextInput
                 style={styles.TextInput}
-                onChangeText={(username) => setPassword(username)}
+                onChangeText={(username) => setUsername(username)}
                 value={username}
                 />
             </SafeAreaView>

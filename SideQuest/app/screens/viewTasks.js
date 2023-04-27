@@ -36,16 +36,6 @@ const ViewTasks = ({route,navigation})=>{
                 if(possibleRewards.length > 0){
                     item = possibleRewards[Math.floor(Math.random()*possibleRewards.length)];
                 }
-                let toast = Toast.show('Task Complete! Your reward is: ' + item, {
-                    duration: 10000,
-                    position: Toast.positions.CENTER,
-                    textColor: '#000000',
-                    backgroundColor: '#00FF00',
-                    shadow: true,
-                    animation: true,
-                    hideOnPress: true,
-                    delay: 0,
-                });
                 navigation.goBack();
                 var title = BlogPost.title
                 var content = BlogPost.content

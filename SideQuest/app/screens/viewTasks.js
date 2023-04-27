@@ -61,7 +61,7 @@ const ViewTasks = ({route,navigation})=>{
 
 const styles = StyleSheet.create({
     container: { flex: 1, padding: 10, justifyContent: 'center', backgroundColor: 'black'},
-    text: { fontSize: 20, fontWeight: 'bold' , textAlign: 'center', color: 'white', lineHeight:100 },
+    text: { fontSize: 20, fontWeight: 'bold' , textAlign: 'center', color: 'white', lineHeight:30 },
     timeStyle: {fontSize: 50, textAlign:"center"},
     completedButton: {width: "50%", alignSelf: 'flex-end', marginTop: -5}
 })
